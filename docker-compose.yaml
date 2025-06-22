@@ -1,0 +1,19 @@
+services:
+  escola-front-end:
+    container_name: escola-front-end
+    image: escola-front-end
+    build:
+      context: .
+    ports:
+      - "8585:8080"
+    stdin_open: true
+    tty: true
+    restart: unless-stopped 
+    working_dir: /app
+    volumes:
+      - ./:/app
+    networks:
+      - escola_network
+networks:
+  escola_network:
+    driver: bridge

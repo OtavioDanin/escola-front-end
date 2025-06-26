@@ -3,9 +3,10 @@ FROM node:24-alpine
 RUN apk update
 RUN apk upgrade
 WORKDIR /app
-
+# Resolve o host manualmente
+RUN echo "172.20.0.5 api-escola" >> /etc/hosts
 # Instala dependências globais úteis para desenvolvimento
-RUN npm install -g @vue/cli @vue/cli-service
+# RUN npm install -g @vue/cli @vue/cli-service
 
 # Copia os arquivos de configuração do projeto
 COPY package*.json ./
@@ -22,8 +23,7 @@ COPY . .
 EXPOSE 8080
 
 # Comando para iniciar o servidor de desenvolvimento
-CMD ["npm", "run", "serve"]
-# CMD ["npm", "run", "serve", "--host", "0.0.0.0"]
+# CMD ["npm", "run", "serve"]
 
 # Production stage
 # FROM nginx:stable-alpine

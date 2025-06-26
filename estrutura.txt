@@ -1,0 +1,14 @@
+src/
+├── components/
+│   ├── AlunoForm.vue
+│   └── AlunoList.vue
+├── router/
+│   └── index.js
+├── services/
+│   └── api.js
+├── views/
+│   ├── AlunoCreate.vue
+│   ├── AlunoEdit.vue
+│   └── AlunoView.vue
+├── App.vue
+└── main.js

@@ -1,4 +1,4 @@
-# 🎓 Sistema de Gestão Escolar - Frontend
+# 🎓 Front-End para Sistema de Gestão Escolar - Frontend
 
 ![Vue.js](https://img.shields.io/badge/vuejs-%2335495e.svg?style=for-the-badge&logo=vuedotjs&logoColor=%234FC08D)
 ![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)

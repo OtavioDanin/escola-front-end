@@ -12,7 +12,7 @@
     
     <div class="mb-3">
       <label for="data_nascimento" class="form-label">Data de Nascimento</label>
-      <input type="date" class="form-control" id="data_nascimento" v-model="localAluno.data_nascimento" required>
+      <input type="date" class="form-control" id="data_nascimento" v-model="localAluno.dataNascimento" required>
     </div>
     
     <div class="mb-3">

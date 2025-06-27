@@ -61,7 +61,7 @@ Aplicação frontend desenvolvida com Vue.js 3 para o sistema de gestão escolar
 ## 🏗️ Como Executar o Projeto
 
 ### Pré-requisitos
-- Node.js 16+
+- Node.js 22+
 - npm ou yarn
 - Docker (opcional)
 

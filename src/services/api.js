@@ -29,5 +29,8 @@ export default {
     },
     getStatus() {
         return api.get('/status')
+    },
+    deleteAluno(id) {
+        return api.delete(`/aluno/${id}`)
     }
 }

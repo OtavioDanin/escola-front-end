@@ -1,0 +1,9 @@
+Especificações Técnicas:
+    -Rede Docker: Rede isolada escola-network
+    -Portas Mapeadas:
+        -8080 → Frontend (NGINX)
+        -8000 → Backend (Laravel)
+        -3306 → Banco de dados (MySQL)
+    Volumes:
+        -Dados do MySQL persistidos em volume nomeado
+        -Código fonte montado via bind mount (desenvolvimento)

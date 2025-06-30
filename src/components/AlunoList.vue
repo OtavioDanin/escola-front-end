@@ -71,7 +71,6 @@ export default {
     deleteAluno(id) {
       if (confirm('Tem certeza que deseja excluir este aluno?')) {
         this.$emit('delete', id)
-        alert('Aluno removido com sucesso.');
       }
     }
   }

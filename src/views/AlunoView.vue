@@ -47,7 +47,9 @@ export default {
       try {
         await api.deleteAluno(id)
         this.alunos = this.alunos.filter(aluno => aluno.id !== id)
+        alert('Aluno removido com sucesso.');
       } catch (error) {
+        alert('Erro ao excluir aluno.');
         console.error('Erro ao excluir aluno:', error)
       }
     }

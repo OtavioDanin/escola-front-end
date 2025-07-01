@@ -1,7 +1,8 @@
 import axios from 'axios'
+import auth from './auth';
 
 const api = axios.create({
-    baseURL: 'http://172.20.0.5/api', 
+    baseURL: 'http://172.20.0.5/api',
     withCredentials: false,
     headers: {
         'Accept': 'application/json',
@@ -11,26 +12,69 @@ const api = axios.create({
 })
 
 export default {
-    getAlunos() {
-        return api.get('/aluno');
+    async getAlunos() {
+        const token = await auth.login();
+        return api.get('/aluno',
+            {
+                headers: {
+                    'Authorization': `Bearer ${token}`
+                }
+            }
+        );
     },
-    getAluno(id) {
-        return api.get(`/aluno/${id}`)
+    async getAluno(id) {
+        const token = await auth.login();
+        return api.get(`/aluno/${id}`,
+            {
+                headers: {
+                    'Authorization': `Bearer ${token}`
+                }
+            }
+        )
     },
     createAluno(aluno) {
         return api.post('/aluno', aluno)
     },
-    updateAluno(id, aluno) {
-        return api.put(`/aluno/${id}`, aluno)
+    async updateAluno(id, aluno) {
+        const token = await auth.login();
+        const response = api.put(`/aluno/${id}`, aluno,
+            {
+                headers: {
+                    'Authorization': `Bearer ${token}`
+                }
+            }
+        );
+        console.log(response);
     },
 
-    getTurmas() {
-        return api.get('/turma')
+    async getTurmas() {
+        const token = await auth.login();
+        return api.get('/turma',
+            {
+                headers: {
+                    'Authorization': `Bearer ${token}`
+                }
+            }
+        )
     },
-    getStatus() {
-        return api.get('/status')
+    async getStatus() {
+        const token = await auth.login();
+        return api.get('/status',
+            {
+                headers: {
+                    'Authorization': `Bearer ${token}`
+                }
+            }
+        )
     },
-    deleteAluno(id) {
-        return api.delete(`/aluno/${id}`)
+    async deleteAluno(id) {
+        const token = await auth.login();
+         api.delete(`/aluno/${id}`,
+            {
+                headers: {
+                    'Authorization': `Bearer ${token}`
+                }
+            }
+         )
     }
 }
